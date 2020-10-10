@@ -29,7 +29,7 @@ def get_measurements():
 @app.route('/measurements', methods=['POST'])
 def add_measurement():
     # mount measurement object
-    posted_measurement = MeasurementSchema(only=('title', 'description'))\
+    posted_measurement = MeasurementSchema(only=('title', 'description','systolic','diastolic','pulse'))\
         .load(request.get_json())
 
     # measurement = Measurement(**posted_measurement.data, created_by="HTTP post request")
