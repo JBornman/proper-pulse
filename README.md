@@ -1,8 +1,12 @@
 <!-- Logo provided by Tailor Brands -->
-<p align="center">
-  <a href="" rel="noopener">
+<h1 align="center">
+  <br>
+    <a href="" rel="noopener">
  <img width=300px height=137px src="./documentation/logo.png" alt="Project logo"></a>
-</p>
+  <br>
+  <br>
+  <b>Proper Pulse</b>
+</h1>
 
 <!-- Shields -->
 <div align="center">
@@ -11,8 +15,6 @@
 [![License](https://img.shields.io/badge/license-GPL%20v3-blue.svg?style=flat-square)](/LICENSE)
 
 </div>
-
----
 
 <p align="center"> Proper Pulse is an application for logging and tracking your blood pressure.
     <br> 
@@ -25,8 +27,8 @@ Completed for a Kartoza technical assessment.
 - [About](#about)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installing](#installing)
-- [Usage](#usage)
+- [Running Locally](#running-locally)
+  - [Service](#service)
 - [Deployment](#deployment)
 - [Built Using](#built-using)
 - [Acknowledgements](#acknowledgements)
@@ -40,10 +42,31 @@ Completed for a Kartoza technical assessment.
 ### Prerequisites
 
 
-### Installing
+## Running Locally
+
+### Service
+- cd into the 'service' folder
+- Make the script executable  
+```bash
+chmod u+x bootstrap.sh
+```
+- Execute the script in the background
+```bash
+./bootstrap.sh &
+```
+- Create dummy measurement
+```bash
+    curl -X POST -H 'Content-Type: application/json' -d '{
+    "title": "TypeScript Advanced Exam",
+    "description": "Tricky questions about TypeScript."
+    }' http://0.0.0.0:5000/measurements
+```
+- Retrieve measurements
+```bash
+curl http://0.0.0.0:5000/measurements
+```
 
 
-## Usage 
 
 
 ## Deployment 
