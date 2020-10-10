@@ -1,10 +1,11 @@
 from flask import Flask, jsonify, request
-
+from flask_cors import CORS
 from .entities.entity import Session, engine, Base
 from .entities.measurement import Measurement, MeasurementSchema
 
 # creating the Flask application
 app = Flask(__name__)
+CORS(app)
 
 # if needed, generate database schema
 Base.metadata.create_all(engine)
@@ -29,7 +30,7 @@ def get_measurements():
 @app.route('/measurements', methods=['POST'])
 def add_measurement():
     # mount measurement object
-    posted_measurement = MeasurementSchema(only=('title', 'description'))\
+    posted_measurement = MeasurementSchema(only=('title', 'description','systolic','diastolic','pulse'))\
         .load(request.get_json())
 
     # measurement = Measurement(**posted_measurement.data, created_by="HTTP post request")

@@ -28,6 +28,7 @@ Completed for a Kartoza technical assessment.
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
 - [Running Locally](#running-locally)
+  - [Database](#database)
   - [Service](#service)
 - [Deployment](#deployment)
 - [Built Using](#built-using)
@@ -44,6 +45,17 @@ Completed for a Kartoza technical assessment.
 
 ## Running Locally
 
+### Database
+- open a terminal
+- execute the following docker command
+```bash
+docker run --name online-pulse-db \
+    -p 5432:5432 \
+    -e POSTGRES_DB=properpulse \
+    -e POSTGRES_PASSWORD=Pr0p3r-Pu1s3 \
+    -d postgres
+```
+
 ### Service
 - cd into the 'service' folder
 - Make the script executable  
@@ -57,8 +69,11 @@ chmod u+x bootstrap.sh
 - Create dummy measurement
 ```bash
     curl -X POST -H 'Content-Type: application/json' -d '{
-    "title": "TypeScript Advanced Exam",
-    "description": "Tricky questions about TypeScript."
+    "title": "Test measurement",
+    "description": "Normal relaxed measurement",
+    "systolic" : 130,
+    "diastolic" : 87,
+    "pulse" : 96
     }' http://0.0.0.0:5000/measurements
 ```
 - Retrieve measurements
