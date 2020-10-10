@@ -1,10 +1,11 @@
 from flask import Flask, jsonify, request
-
+from flask_cors import CORS
 from .entities.entity import Session, engine, Base
 from .entities.measurement import Measurement, MeasurementSchema
 
 # creating the Flask application
 app = Flask(__name__)
+CORS(app)
 
 # if needed, generate database schema
 Base.metadata.create_all(engine)

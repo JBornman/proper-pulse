@@ -1,3 +1,9 @@
+/**
+ * Measurement class with measurement fields
+ * 
+ * @export
+ * @class Measurement
+ */
 export class Measurement {
     constructor(
       public title: string,
