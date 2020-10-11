@@ -25,6 +25,7 @@ Completed for a Kartoza technical assessment.
 
 - [Table of Contents](#table-of-contents)
 - [About](#about)
+- [Containers](#containers)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
 - [Running Locally](#running-locally)
@@ -45,6 +46,10 @@ Completed for a Kartoza technical assessment.
 ## About
 This is a simple application used to store and display blood pressure data. The application consists of a python service that retrieves and stores the data from postgres and an Angular front end that displays the records stored in the database. The design as it stands currently will look like this: 
 ![Architecture diagram for Proper Pulse](./documentation/Architecture%20diagram.jpeg) 
+
+## Containers
+- [Python Container](https://hub.docker.com/r/nacl115/proper_pulse_service)
+- [UI Container](https://hub.docker.com/r/nacl115/proper_pulse_ui)
 
 ## Getting Started
 
