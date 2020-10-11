@@ -1,11 +1,35 @@
 version: "3"
 
 services:
+  # nginx
+  nginx:
+    image: nginx:1.15-alpine
+    restart: unless-stopped
+    volumes:
+      # - ./data/nginx:/etc/nginx/conf.d
+      # - ./data/certbot/conf:/etc/letsencrypt
+      # - ./data/certbot/www:/var/www/certbot
+      - /certs:/etc/nginx/certs
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
+
+  # Certbot
+  certbot:
+    image: certbot/certbot
+    restart: unless-stopped
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
   # Portainer
   portainer:
     image: portainer/portainer
     command: -H unix:///var/run/docker.sock
-    restart: always
+    restart: unless-stopped
     ports:
       - 9000:9000
       - 8000:8000
@@ -18,9 +42,22 @@ services:
     build: ./service/
     ports:
       - 5000:5000
-    restart: always
+    restart: unless-stopped
     depends_on:
       - postgres
+
+  # Angular Front End
+  ui:
+    build: ./ui/frontend/
+    ports:
+      - 4200:4200
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - backend
+    hostname: properpulse.localhost
+    environment:
+      VIRTUAL_HOST: properpulse.localhost
 
   # Postgres database
   postgres:
@@ -34,7 +71,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Pr0p3r-Pu1s3
       POSTGRES_DB: properpulse
-    restart: always
+    restart: unless-stopped
 
 volumes:
   postgres_db_vol:
