@@ -51,7 +51,7 @@ Completed for a Kartoza technical assessment.
 ```bash
 docker run --name online-pulse-db \
     -p 5432:5432 \
-    -e POSTGRES_DB=properpulse \
+    -e POSTGRES_DB=postgres \
     -e POSTGRES_PASSWORD=Pr0p3r-Pu1s3 \
     -d postgres
 ```

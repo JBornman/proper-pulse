@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from .entities.entity import Session, engine, Base
-from .entities.measurement import Measurement, MeasurementSchema
+from entities.entity import Session, engine, Base
+from entities.measurement import Measurement, MeasurementSchema
 
 # creating the Flask application
 app = Flask(__name__)
@@ -42,7 +42,11 @@ def add_measurement():
     session.commit()
 
     # return created measurement
-    # new_measurement = MeasurementSchema().dump(measurement).data
     new_measurement = MeasurementSchema().dump(measurement)
     session.close()
     return jsonify(new_measurement), 201
+
+# This is to keep your app running and not just exit with a code 0
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
+    print('test')

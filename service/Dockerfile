@@ -10,10 +10,8 @@ COPY . /app
 
 COPY ./src /app
 
-RUN pip install -r requirements.txt
+RUN python -m pip install -r requirements.txt
 
-RUN ls -a
+EXPOSE 5000
 
-ENTRYPOINT [ "python" ]
-
-CMD [ "main.py" ]
+CMD [ "python","main.py" ]

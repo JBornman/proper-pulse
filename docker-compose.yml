@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  # Portainer
+  portainer:
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock
+    restart: always
+    ports:
+      - 9000:9000
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+  # Python Service
+  backend:
+    build: ./service/
+    ports:
+      - 5000:5000
+    restart: always
+    depends_on:
+      - postgres
+
+  # Postgres database
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_db_vol:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Pr0p3r-Pu1s3
+      POSTGRES_DB: properpulse
+    restart: always
+
+volumes:
+  postgres_db_vol:
+  portainer_data:
