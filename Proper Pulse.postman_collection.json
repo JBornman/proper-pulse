@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "9fa5d775-7591-42ed-9dbe-f70d61fecf82",
+		"name": "Proper Pulse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post Measurement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Postman Test measurement\",\n    \"description\": \"Normal relaxed measurement added from Postman\",\n    \"systolic\": 130,\n    \"diastolic\": 87,\n    \"pulse\": 96\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/measurements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"measurements"
+					]
+				},
+				"description": "Post a new measurement"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Measurements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/measurements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"measurements"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

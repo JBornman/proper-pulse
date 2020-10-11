@@ -4,6 +4,15 @@
 <h2>Here are the measurements logged so far:</h2>
 <ul>
   <li *ngFor="let measurement of measurementList">
-    {{ measurement.title }}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ measurement.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ measurement.description}}</h6>
+        <p class="card-text">Systolic : {{measurement.systolic }} </p>
+        <p class="card-text">Diastolic : {{measurement.diastolic }} </p>
+        <p class="card-text">Pulse : {{measurement.pulse }} </p>
+      </div>
+    </div>
+    
   </li>
 </ul>

@@ -3,3 +3,5 @@ service/src/entities/__pycache__
 service/Pipfile.lock
 .vscode
 ui/frontend/node_modules
+data
+certs
