@@ -11,8 +11,12 @@
 <!-- Shields -->
 <div align="center">
 
-[![Size](https://img.shields.io/github/repo-size/JBornman/proper-pulse?style=flat-square)]()
-[![License](https://img.shields.io/badge/license-GPL%20v3-blue.svg?style=flat-square)](/LICENSE)
+[![Size](https://img.shields.io/github/repo-size/JBornman/proper-pulse)]()
+[![License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)](/LICENSE)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JBornman_proper-pulse&metric=alert_status&style=flat-square)](https://sonarcloud.io/dashboard?id=JBornman_proper-pulse)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JBornman_proper-pulse&metric=bugs)](https://sonarcloud.io/dashboard?id=JBornman_proper-pulse)
+![Python Container](https://img.shields.io/twitter/url?label=Python%20Container&logo=Docker&style=social&url=https%3A%2F%2Fhub.docker.com%2Fr%2Fnacl115%2Fproper_pulse_service)
+![Twitter URL](https://img.shields.io/twitter/url?label=UI%20Container&logo=Docker&style=social&url=https%3A%2F%2Fhub.docker.com%2Fr%2Fnacl115%2Fproper_pulse_ui)
 
 </div>
 
