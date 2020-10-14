@@ -15,7 +15,8 @@
 [![License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)](/LICENSE)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JBornman_proper-pulse&metric=alert_status&style=flat-square)](https://sonarcloud.io/dashboard?id=JBornman_proper-pulse)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JBornman_proper-pulse&metric=bugs)](https://sonarcloud.io/dashboard?id=JBornman_proper-pulse)
-
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/nacl115/proper_pulse_service?label=Service%20Container)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/nacl115/proper_pulse_ui?label=UI%20Container)
 
 </div>
 
