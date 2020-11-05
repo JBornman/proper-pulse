@@ -21,8 +21,6 @@
 </div>
 
 <p align="center"> Proper Pulse is an application for logging and tracking your blood pressure.
-    <br> 
-Completed for a Kartoza technical assessment.
 </p>
 
 ## Table of Contents
