@@ -11,8 +11,8 @@
 <!-- Shields -->
 <div align="center">
 
-[![Size](https://img.shields.io/github/repo-size/JBornman/proper-pulse)][![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJBornman%2Fproper-pulse.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FJBornman%2Fproper-pulse?ref=badge_shield)
-()
+![Size](https://img.shields.io/github/repo-size/JBornman/proper-pulse)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJBornman%2Fproper-pulse.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FJBornman%2Fproper-pulse?ref=badge_shield)
 [![License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)](/LICENSE)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JBornman_proper-pulse&metric=alert_status&style=flat-square)](https://sonarcloud.io/dashboard?id=JBornman_proper-pulse)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JBornman_proper-pulse&metric=bugs)](https://sonarcloud.io/dashboard?id=JBornman_proper-pulse)
