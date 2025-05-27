@@ -1,5 +1,5 @@
 Flask==1.1.2
-Flask-Cors==3.0.9
+Flask-Cors==6.0.0
 Pillow==8.1.0
 pipenv==2020.8.13
 psycopg2-binary==2.8.6
